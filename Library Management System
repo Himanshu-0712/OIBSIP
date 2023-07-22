@@ -1,0 +1,106 @@
+import java.util.Scanner;
+
+class Library_1 extends Thread
+{
+    public void set(int id, String Name, double Cost)
+    {
+        System.out.println("Id: " + id);
+        System.out.println("Name: " + Name);
+        System.out.println("Cost: " + Cost);
+    }
+
+    public void get()
+    {
+        return;
+    }
+}
+
+class Book extends Library_1 {
+    public void show(Double Price, String Name)
+    {
+        System.out.println("Highest Price of the book amongst the three is: " + Price + " Whose Category is: " + Name);
+    }
+}
+
+public class Task_5
+{
+    public static void main(String[] args) throws InterruptedException
+    {
+        String Scan;
+        long User;
+        int confirm;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Welcome To Library Management System");
+        System.out.println("Enter First Name : ");
+        String a = sc.next();
+        System.out.println("Enter Middle Name : ");
+        String b = sc.next();
+        System.out.println("Enter last Name: ");
+        String c = sc.next();
+        System.out.println("--------------");
+        System.out.println("Here are Some of our category of books.... :)");
+        Book Bo = new Book();
+        Book Bp = new Book();
+        Book Bq = new Book();
+        Bo.set(001, "Inception", 500.56);
+        Bp.set(002, "Comedy", 1000.20);
+        Bq.set(003, "Novel", 799.58);
+        Bo.show(1000.00, "Comedy");
+        System.out.println("Select One Book:- ");
+        User = sc.nextInt();
+        //Conditions
+        if (User == 1)
+        {
+            Bo.get();
+        }
+        else if (User == 2)
+        {
+            System.out.println("Comedy\nCost:-1000.20\nId:-002");
+        }
+        else if (User == 3)
+        {
+            System.out.println("Novel\nCost:-799.58\nId:-003");
+        }
+        System.out.println("<-------------------><-------------------><------------------->");
+        System.out.println("Enter 4 to Confirm...");
+        confirm = sc.nextInt();
+
+        if (confirm == 4)
+        {
+            System.out.println("Your Book has been Selected by choosing number:- " + confirm);
+        }
+
+        System.out.println("Enter Mode of payment: ");
+        System.out.println("Press 5 For Online ");
+        System.out.println("Press 6 For Cash");
+        System.out.println("Press 7 For Credit/Debit Card ");
+        confirm = sc.nextInt();
+
+        if (confirm == 5)
+        {
+            System.out.println("Payment mode is Online");
+            Thread.sleep(2000);
+            System.out.println("Scan The QR code ");
+            Thread.sleep(2000);
+            System.out.println("Enter S to scan");
+            Scan = sc.next();
+        }
+        else if (confirm == 6)
+        {
+            System.out.println("Payment mode is Offline");
+        }
+        else if (confirm == 7)
+        {
+            System.out.println("Swipe Your Card inside the Machine ");
+            Thread.sleep(1000);
+        }
+
+        System.out.println("Initializing Payment");
+        Thread.sleep(2000);
+        System.out.println("Payment Initiated Successfully");
+        Thread.sleep(2000);
+        System.out.println("Thank you....Visit Again :)");
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+
+    }
+}
