@@ -20,8 +20,7 @@ class atm_1
     }
     public void menu()
     {
-        System.out.println("*************************************************************************");
-        System.out.println("Welcome To The ATM Interface Project");
+
         System.out.println("Enter Your Choice: ");
         System.out.println("1. Check Your Account Balance");
         System.out.println("2. Withdraw Amount");
@@ -83,6 +82,8 @@ class atm_1
 }
 public class Task_ATM_Interface {
     public static void main(String[] args) {
+        System.out.println("************************************************************************************************************************************************************");
+        System.out.println("Welcome To The ATM Interface Project");
         atm_1 a = new atm_1();
         a.checkPin();
     }
