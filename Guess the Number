@@ -1,0 +1,35 @@
+// Guess The Number
+import java.util.Random;
+import java.util.Scanner;
+
+public class Task_2 {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        Random r = new Random();
+        int num =r.nextInt(100);
+        int tryCount = 0;
+        while (true)
+        {
+            System.out.println("Enter the number: ");
+            int guess = sc.nextInt();
+            if (num==guess)
+            {
+                System.out.println("Yes ..You are right");
+                break;
+
+            }
+            else if (num > guess)
+            {
+                tryCount++;
+                System.out.println("Wrong...Number is higher than guess");
+            }
+            else if (num < guess)
+            {
+                tryCount++;
+                System.out.println("Wrong...Number is Lower than guess");
+            }
+        }
+        System.out.println("Number of Attempts after guessing: "+tryCount);
+    }
+}
+
