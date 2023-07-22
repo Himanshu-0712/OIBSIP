@@ -1,1 +1,99 @@
+import java.util.Scanner;
+class Form_1 extends Thread
+{
+    public void set(String Train_name,int Trainno,String Timings,String Arrival,String Departure,String Cost)
+    {
+        System.out.println("Train name: "+Train_name);
+        System.out.println("Train Number: "+Trainno);
+        System.out.println("Timings: "+Timings);
+        System.out.println("Arrival at: "+Arrival);
+        System.out.println("Departure at: "+Departure);
+    }
+    public void get(String Trainname,int Trainno)
+    {
+        return ;
+    }
+}
+public class Task_1 {
+
+    public static void main(String[] args) throws InterruptedException {
+        Scanner sc = new Scanner(System.in);
+        int User, confirm;
+        //Login Id & pass
+        System.out.println("Enter LoginId: ");
+        int LoginId = sc.nextInt();
+        System.out.println("Enter Password: ");
+        double Password = sc.nextInt();
+        System.out.println("Enter Your Name: ");
+        String Name = sc.next();
+        Form_1 f = new Form_1();
+        Form_1 f1 = new Form_1();
+        Form_1 f2 = new Form_1();
+        f.set("Rajdhani Express", 12054, "Arrival is at: 9:45 am,12:20 pm,3:30 pm,8:20 pm", "Nagpur", "Odisha", "500-2000/-");
+        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
+        f1.set("Nizamuddin Express", 12056, "Arrival is at: 10:20 am,12:30 pm,4:35 pm,7:12 pm", "Banglore", "Chennai", "600-2000/-");
+        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
+        f2.set("Nirvanna Express", 11085, "Arrival is at: 11:00 am,13:42 pm,5:30 pm", "Karnatka", "Uttarakhand", "400-1800/-");
+        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("Three Trains are available at this moment....");
+        Thread.sleep(2000);
+        System.out.println("Select Your Option between 1 to 3: ");
+        User = sc.nextInt();
+        //conditions
+        if (User == 1)
+        {
+            f.get("Rajdhani Express", 12054);
+        }
+        else if (User == 2)
+        {
+            f1.get("Nizamuddin Express", 12056);
+        }
+        else if (User == 3)
+        {
+            f2.get("Nirvanna Express", 11085);
+        }
+        System.out.println("-------------------------------------");
+        System.out.println("Press 4 to confirm Your Option: ");
+        confirm = sc.nextInt();
+
+        if (confirm == 4)
+        {
+            System.out.println("Your Train has been selected");
+            Thread.sleep(2000);
+        }
+        System.out.println("Enter Mode of Payment: \n5 for Offline\n6 for Online\n7 for Credit/Debit Card");
+        //System.out.println("5 for Offline");
+        //System.out.println("6 for Online");
+        //System.out.println("7 for Credit/Debit Card");
+        confirm = sc.nextInt();
+        if (confirm == 5)
+        {
+            System.out.println("Your Mode of payment is Offline\nYou can submit the cash at cash counter\nAnd collect your Tickets");
+            System.out.println("--------------------------------Have a Safe and Happy Journey :)--------------------------------");
+        }
+        else if (confirm == 6)
+        {
+            System.out.println("Your Mode of payment is Online\n");
+            System.out.println("Press 8 for Upi code");
+            confirm = sc.nextInt();
+            {
+                if (confirm == 8) {
+                    System.out.println("Scanning the QR code ");
+                    Thread.sleep(2000);
+                    System.out.println("Initializing Payment..");
+                    Thread.sleep(2000);
+                    System.out.println("Payment Initiated Successfully\nHave a safe and happy Journey");
+                }
+            }
+        }
+        else if (confirm == 7)
+        {
+            System.out.println("Pay at the cash counter and get the receipt\nHappy Journey");
+        }
+        Thread .sleep(2000,1);
+        System.out.println("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-Thank You_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-");
+    }
+}
+
+
 
