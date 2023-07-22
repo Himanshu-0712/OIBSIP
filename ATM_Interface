@@ -1,0 +1,89 @@
+import java.util.Scanner;
+
+class atm_1
+{
+    float balance;
+    int pin = 12345;
+    public void checkPin()
+    {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter the pin: ");
+        int enterpin = sc.nextInt();
+        if (enterpin == pin)
+        {
+            menu();
+        }
+        else
+        {
+            System.out.println("Invalid Pin");
+        }
+    }
+    public void menu()
+    {
+        System.out.println("*************************************************************************");
+        System.out.println("Welcome To The ATM Interface Project");
+        System.out.println("Enter Your Choice: ");
+        System.out.println("1. Check Your Account Balance");
+        System.out.println("2. Withdraw Amount");
+        System.out.println("3. Deposit Amount");
+        System.out.println("4. EXIT");
+        Scanner sc= new Scanner(System.in);
+        int choice = sc.nextInt();
+        if (choice == 1)
+        {
+            checkBalance();
+        }
+        else if (choice == 2)
+        {
+            withdraw();
+        }
+        else if (choice == 3)
+        {
+            DepositAmount();
+        }
+        else if (choice == 4)
+        {
+            System.out.println("Thank you for baking With Us :)");
+            return;
+        }
+        else
+        {
+            System.out.println("Enter a valid Choice: ");
+        }
+    }
+    public void checkBalance()
+    {
+        System.out.println("Balance: "+balance);
+        menu();
+    }
+    public void withdraw()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Amount: ");
+        float amount = sc.nextFloat();
+        if (amount > balance ) {
+            System.out.println("Insufficient Balance");
+        }
+        else
+        {
+            balance = balance - amount;
+            System.out.println("Money Withdrew Successful");
+        }
+        menu();
+    }
+    public void DepositAmount()
+    {
+        System.out.println("Enter the Amount");
+        Scanner sc = new Scanner(System.in);
+        float amount = sc.nextFloat();
+        balance = balance + amount;
+        System.out.println("Money Deposited Successfully");
+        menu();
+    }
+}
+public class Task_ATM_Interface {
+    public static void main(String[] args) {
+        atm_1 a = new atm_1();
+        a.checkPin();
+    }
+}
